@@ -1,5 +1,5 @@
 /*
- * This code takes the side length of a cube and prints out it's surface area and volume.
+ * This code takes the side length of a cube and prints out its surface area and volume.
  */
 public class Intro_Cube {
 
