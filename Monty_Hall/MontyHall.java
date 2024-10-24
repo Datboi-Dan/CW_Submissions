@@ -171,7 +171,7 @@ public class MontyHall
 			else
 			{
 				
-				Door.setPickedDoor(d);;
+				Door.setPickedDoor(d);
 				break;
 				
 			}
