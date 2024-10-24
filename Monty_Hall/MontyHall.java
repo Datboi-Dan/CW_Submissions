@@ -157,23 +157,29 @@ public class MontyHall
 			
 		}
 		
-		//Iterates through an arraylist in the Door class that includes every door object that has been instantiated.
-		for(Door d : Door.getDoorList())
+		//Runs the following code if the user wants to switch.
+		if (userInput.equals("yes"))
 		{
 			
-			//Sets the picked door as the current door. Ignores the current door if it is already the picked door or the prize door.
-			if (d == Door.getPickedDoor() || d.isOpen())
+			//Iterates through an arraylist in the Door class that includes every door object that has been instantiated.
+			for(Door d : Door.getDoorList())
 			{
+			
+				//Sets the picked door as the current door. Ignores the current door if it is already the picked door or the prize door.
+				if (d == Door.getPickedDoor() || d.isOpen())
+				{
 				
-				continue;
+					continue;
 				
-			}
-			else
-			{
+				}
+				else
+				{
 				
-				Door.setPickedDoor(d);
-				break;
+					Door.setPickedDoor(d);
+					break;
 				
+				}
+			
 			}
 			
 		}
@@ -197,8 +203,8 @@ public class MontyHall
 		else
 		{
 			
-			System.out.print("You Lost");
-			
+			System.out.println("You Lost");
+			System.out.print("The winning door was Door " + Door.getPrizeDoor().getDoorNumber());		
 		}
 			
 		
