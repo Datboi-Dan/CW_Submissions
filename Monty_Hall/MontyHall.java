@@ -46,23 +46,8 @@ public class MontyHall
 	private static void pickPrizeDoor()
 	{
 		
-		//Picks a random number, then decides which door to set as a prize door based on that number.
-		switch ((int)(Math.random() * 3) + 1)
-		{
-			
-		case 1:
-			Door.setPrizeDoor(door1);
-			break;
-			
-		case 2:
-			Door.setPrizeDoor(door2);
-			break;
-			
-		case 3:
-			Door.setPrizeDoor(door3);
-			break;
-		
-		}
+		//Sets a the prize door as a random door from the door list.
+		Door.setPrizeDoor(Door.getDoorList().get((int)(Math.random() * 3)));
 		
 	}
 	
@@ -113,27 +98,20 @@ public class MontyHall
 	private static void openWrongDoor()
 	{
 	
-		//Iterates through an arraylist in the Door class that includes every door object that has been instantiated.
-		for (Door d : Door.getDoorList())
+		//Picks a random door from the door list.
+		Door randomDoor = Door.getDoorList().get((int)(Math.random() * 3));
+			
+		//Picks a new random door if the random door is the door that the user picked or the prize door.
+		if (randomDoor == Door.getPickedDoor() || randomDoor == Door.getPrizeDoor())
 		{
 			
-			//Opens the current door, then exits the loop. Ignores the current door if it is the picked door or the prize door.
-			if (d == Door.getPickedDoor() || d == Door.getPrizeDoor())
-			{
-			
-				continue;
-			
-			}
-			else
-			{
-				
-				d.setOpen(true);
-				System.out.println("Door " + d.getDoorNumber() + " is the WRONG door.");
-				break;
-			
-			}
+			openWrongDoor();
 			
 		}
+				
+		//Opens the random door and reveals to the player that the random door is the wrong door.
+		randomDoor.setOpen(true);
+		System.out.println("Door " + randomDoor.getDoorNumber() + " is the WRONG door.");
 		
 	}
 	
