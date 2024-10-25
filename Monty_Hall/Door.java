@@ -34,6 +34,18 @@ public class Door
 	
 	//Functionalities
 	
+	public static void generateDoors(int doors)
+	{
+		
+		for (int i = 1; i <= doors; i++)
+		{
+			
+			new Door(i);
+			
+		}
+		
+	}
+	
 	/**
 	 * Gets the door number.
 	 * @return The door number.
