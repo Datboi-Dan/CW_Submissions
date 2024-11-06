@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 /**
  * This class is an upgraded version of the Monty Hall project.
+ * MILCS
  * @author - Daniel B)
  */
 public class MontyHallModular
