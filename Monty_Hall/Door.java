@@ -1,5 +1,10 @@
 import java.util.ArrayList;
 
+/**
+ * This class creates Door objects for the Monty Hall game.
+ * MILCS
+ * @author Daniel B)
+ */
 public class Door 
 {
 	
