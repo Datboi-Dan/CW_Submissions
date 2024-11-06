@@ -93,7 +93,7 @@ public class MontyHall
 	
 	
 	/**
-	 * Reveals the door one of the wrong doors.
+	 * Reveals one of the wrong doors.
 	 */
 	private static void openWrongDoor()
 	{
@@ -108,10 +108,14 @@ public class MontyHall
 			openWrongDoor();
 			
 		}
-				
-		//Opens the random door and reveals to the player that the random door is the wrong door.
-		randomDoor.setOpen(true);
-		System.out.println("Door " + randomDoor.getDoorNumber() + " is the WRONG door.");
+		else
+		{
+		
+			//Opens the random door and reveals to the player that the random door is the wrong door.
+			randomDoor.setOpen(true);
+			System.out.println("Door " + randomDoor.getDoorNumber() + " is a WRONG door.");
+		
+		}
 		
 	}
 	
@@ -175,7 +179,8 @@ public class MontyHall
 		if (Door.getPickedDoor() == Door.getPrizeDoor())
 		{
 			
-			System.out.print("You Won");
+			System.out.println("You Won");
+			System.out.print("The winning door was Door " + Door.getPrizeDoor().getDoorNumber());
 			
 		}
 		else
@@ -185,7 +190,6 @@ public class MontyHall
 			System.out.print("The winning door was Door " + Door.getPrizeDoor().getDoorNumber());		
 		}
 			
-		
 	}
 	
 }
