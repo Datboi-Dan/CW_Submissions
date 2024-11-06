@@ -1,5 +1,10 @@
 import java.util.Scanner;
 
+/**
+ * This class is a submission to the Monty Hall project for AP Computer Science.
+ * MILCS
+ * @author Daniel B)
+ */
 public class MontyHall 
 {
 	
