@@ -17,16 +17,23 @@ public class Door
 	
 	//A list of all the doors that have been instantiated.
 	private static ArrayList<Door> doorList = new ArrayList<Door>();
+	private static ArrayList<Door> closedDoors = new ArrayList<Door>();
 	
 	//----------------------------------------------------------------------------------------------------
 	
 	//Constructor
+	
+	/**
+	 * Creates a door object. 
+	 * @param doorNumber - The number of the door.
+	 */
 	public Door(int doorNumber) 
 	{
 		
 		isOpen = false;
 		this.doorNumber = doorNumber;
 		doorList.add(this);
+		closedDoors.add(this);
 		
 	}
 	
@@ -34,6 +41,10 @@ public class Door
 	
 	//Functionalities
 	
+	/**
+	 * Generates a number of door objects.
+	 * @param doors - The number of door objects to be generated.
+	 */
 	public static void generateDoors(int doors)
 	{
 		
@@ -79,6 +90,19 @@ public class Door
 		
 		
 		this.isOpen = isOpen;
+		if (isOpen)
+		{
+			
+			closedDoors.remove(this);
+			
+		}
+		else
+		{
+			
+			closedDoors.add(this);
+			
+		}
+		
 		
 	}
 
@@ -140,6 +164,18 @@ public class Door
 		
 		return doorList;
 		
+	}
+
+	
+	/**
+	 * Gets the list of closed doors.
+	 * @return The closed door list.
+	 */
+	public static ArrayList<Door> getClosedDoors() 
+	{
+		
+		return closedDoors;
+	
 	}
 	
 }
