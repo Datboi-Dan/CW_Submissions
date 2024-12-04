@@ -20,7 +20,7 @@ public static String getMonth(int n)
         //Returns the month requested. 
 				return months.substring(0, sL);
 			}
-      //
+      //Runs in any other case.
 			else
 			{
         //Removes the a month at the beginning of the list.
